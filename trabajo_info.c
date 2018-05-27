@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define _CRT_SECURE_NO_WARNINGS // para problemas con scanf del visual
+
 int main()
 {
 	
@@ -39,6 +39,7 @@ int main()
 			{
 			fprintf(stderr, "Problemas al reservar la memoria\n");
 			return(-1);
+			}
 			for ( en = 0; en < fila; en++)
 				{
 					laberinto[en] = (char*)malloc((columna + 1) * sizeof(char));
@@ -57,7 +58,6 @@ int main()
 			}
 			fclose(pf);
 			break;
-			}
 	    }     
 			
 		case 2:
@@ -273,6 +273,7 @@ int main()
 				}
 				fclose(pf);
 				break;
+				break;
 			}
 			
 		case 4:
@@ -366,10 +367,12 @@ int main()
 			break;
 		}
 		
-		for(i = 0; i < fila; i++){
+		for(i = 0; i < fila; i++)
+		{
 			for(j = 0; j < columna; j++)
-				printf("%c", laberinto[i][j]);
-				
+			{
+			    printf("%c", laberinto[i][j]);
+		    }
 			printf("\n");
 		}
 		
