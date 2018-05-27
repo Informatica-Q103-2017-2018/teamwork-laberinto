@@ -62,7 +62,7 @@ int main()
 			
 		case 2:
 		{
-			random=rand()%4;
+			random=rand() % 4;
 			switch (random)
 			{
 				case 0:
@@ -505,5 +505,14 @@ int main()
 				
 		}
 	}
+	printf("\nHa realizado %d movimientos efectivos y %d movimientos contra una pared.\n", c, z);
+	
+	for ( en = (fila-1); en >= 0; en--)
+	{
+	    free (laberinto[en]);
+	}
+
+	free (laberinto);
+	system("pause");
 }
 
